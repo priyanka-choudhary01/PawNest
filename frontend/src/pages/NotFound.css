@@ -1,0 +1,49 @@
+.notfound-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8fafc;
+}
+
+/* Box */
+.notfound-box {
+  text-align: center;
+}
+
+.notfound-box h1 {
+  font-size: 90px;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+}
+
+.notfound-box h2 {
+  margin-bottom: 10px;
+}
+
+.notfound-box p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.notfound-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.home-btn {
+  padding: 10px 20px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+.shop-btn {
+  padding: 10px 20px;
+  background: #e2e8f0;
+  border: none;
+  border-radius: 8px;
+}

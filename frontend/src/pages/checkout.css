@@ -1,0 +1,93 @@
+/* Loader */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* Layout */
+.checkout-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+}
+
+.checkout-left,
+.checkout-right {
+  flex: 1;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 20px;
+}
+
+.section input,
+.section select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* Product */
+.product-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.product-box img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* Summary */
+.summary {
+  margin-top: 20px;
+}
+
+.row,
+.total {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.free {
+  color: green;
+}
+
+/* Buttons */
+.checkout-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.back-btn {
+  background: #ddd;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+}
+
+.place-btn {
+  background: #ff6b6b;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+.place-btn:hover {
+  background: #e85a5a;
+}

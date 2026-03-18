@@ -1,0 +1,87 @@
+/* Page Background */
+.auth-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Card */
+.auth-box {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* Brand */
+.auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.auth-brand i {
+  color: #ff6b6b;
+  font-size: 22px;
+}
+
+.auth-brand h2 {
+  margin: 0;
+}
+
+/* Heading */
+.auth-box h3 {
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+/* Inputs */
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  outline: none;
+  transition: 0.3s;
+}
+
+.auth-box input:focus {
+  border-color: #ff6b6b;
+}
+
+/* Button */
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b6b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-box button:hover {
+  background: #e85a5a;
+}
+
+/* Toggle */
+.toggle {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  color: #ff6b6b;
+}

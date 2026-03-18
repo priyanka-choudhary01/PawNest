@@ -1,0 +1,142 @@
+/* Wrapper */
+.product-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  padding: 30px 20px;
+}
+
+/* Layout */
+.product-box {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* LEFT */
+.left-section {
+  flex: 1;
+}
+
+
+.main-image {
+  width: 25rem !important;
+  height: fit-content !important; 
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* RIGHT */
+.right-section {
+  flex: 1;
+}
+
+/* Text */
+.right-section h2 {
+  margin-bottom: 10px;
+}
+
+.desc {
+  margin-bottom: 12px;
+  color: #666;
+}
+
+.price {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.price span {
+  margin-left: 8px;
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Quantity */
+.quantity {
+  margin-bottom: 15px;
+}
+
+.quantity button {
+  padding: 5px 10px;
+  margin: 5px 5px;
+
+}
+
+/* Buttons */
+.add-cart,
+.buy-now {
+  margin: 1rem 1rem 1rem 0;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+/* DETAILS */
+.details-section {
+  margin-top: 35px;
+  display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.details-left ul li{
+  list-style: none;
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
+}
+.details-left ul li i{
+  margin-right: 0.4rem;
+}
+.details-right{
+  background-color: #eee;
+  padding: 1.2rem;
+}
+/* Bottom bar */
+.bottom-bar {
+  margin-top: 25px;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+
+.bottom-product {
+  margin-top: 25px;
+}
+
+.bottom-product img {
+  width: 20rem;
+  height: fit-content; /* decreased */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .product-box {
+    flex-direction: column;
+  }
+
+  .main-image {
+    height: fit-content;
+    width:20rem;
+  }
+
+  .bottom-product img {
+    height: 160px;
+  }
+}

@@ -1,0 +1,119 @@
+/* Center loader */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* Container */
+.orders-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.orders-container h2 {
+  margin-bottom: 20px;
+}
+
+/* Empty state */
+.orders-empty {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.orders-empty i {
+  font-size: 50px;
+  color: #ff6b6b;
+  margin-bottom: 15px;
+}
+
+.orders-empty p {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.orders-empty button {
+  padding: 10px 20px;
+  border: none;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Card */
+.order-card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+/* Header */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.date {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Status */
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+/* Customize status colors */
+.status.pending {
+  background: #facc15;
+  color: #000;
+}
+
+.status.completed {
+  background: #22c55e;
+  color: white;
+}
+
+.status.cancelled {
+  background: #ef4444;
+  color: white;
+}
+
+/* Items */
+.order-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-details h4 {
+  margin-bottom: 5px;
+}
+
+/* Footer */
+.order-footer {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.address {
+  font-size: 14px;
+  color: #64748b;
+}
