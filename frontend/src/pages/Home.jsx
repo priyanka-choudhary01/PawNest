@@ -77,7 +77,7 @@ function Home() {
 
         <div className="section-header">
           <h2>Best Sellers</h2>
-          <Link to="/shop">View All →</Link>
+          <Link to="/shop" style={{textDecoration:"none"}}>View All →</Link>
         </div>
 
         <div className="product-grid">

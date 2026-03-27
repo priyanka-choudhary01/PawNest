@@ -41,6 +41,15 @@ const orderSchema = new mongoose.Schema({
   shippingAddress: {
     type: String,
     required:true
+  },
+ contact: {
+  type: String,
+  required: true,
+  match: [/^\d{10}$/, "Contact number must be exactly 10 digits"]
+},
+  shippingMethod:{
+    type:String,
+    default:"standard",
   }
 
 }, { timestamps: true });

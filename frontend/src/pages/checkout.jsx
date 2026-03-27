@@ -6,6 +6,9 @@ function Checkout() {
   const [cartItems, setCartItems] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
   const [address, setAddress] = useState("");
+  const [shipping, setShipping] = useState("standard");
+  const [contact , setContact] = useState(null);
+
   const navigate = useNavigate();
 
 const fetchCart = async () => {
@@ -15,7 +18,17 @@ const fetchCart = async () => {
       const data = await res.json();
 
       setCartItems(data.items || []);
-      setTotalPrice(data.totalPrice || 0);
+     let subtotal = data.totalPrice || 0;
+
+const shippingCostMap = {
+  standard: 0,
+  express: 10,
+  "same-day": 20
+};
+
+let shippingCost = shippingCostMap[shipping] || 0;
+
+setTotalPrice(subtotal + shippingCost);
     } catch (err) {
       console.error(err);
     }
@@ -24,6 +37,10 @@ const fetchCart = async () => {
   try {
     const token = localStorage.getItem("token");
     if(!token) navigate('/signup')
+    if (contact.length !== 10) {
+  alert("Contact number must be exactly 10 digits");
+  return;
+}
     const res = await fetch(`${BASE_URL}/api/order/create`, {
       method: "POST",
       headers: {
@@ -31,12 +48,15 @@ const fetchCart = async () => {
       },
       body: JSON.stringify({
         token,
-        shippingAddress: address
+        totalPrice,
+        shippingAddress: address,
+        contact:contact,
+        shippingMethod:shipping
       })
     });
 
     const data = await res.json();
-
+     
     alert(data.message);
 
   } catch (err) {
@@ -45,7 +65,7 @@ const fetchCart = async () => {
 };
   useEffect(() => {
     fetchCart();
-  }, []);
+  }, [shipping]);
 
   return (
     <div className="checkout-container">
@@ -56,7 +76,16 @@ const fetchCart = async () => {
 
         <div className="section">
           <p>Contact information</p>
-          <input type="text" />
+         <input
+  type="text"
+  value={contact}
+  maxLength={10}
+  onChange={(e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    setContact(value);
+  }}
+  placeholder="Enter 10 digit number"
+/>
         </div>
 
         <div className="section">
@@ -71,9 +100,17 @@ const fetchCart = async () => {
 
         <div className="section">
           <p>Shipping Method</p>
-          <select>
-            <option>Select shipping</option>
-          </select>
+        <select 
+  value={shipping} 
+  onChange={(e) => setShipping(e.target.value)
+  
+  }
+>
+  
+  <option value="standard">Standard Delivery (3–5 days) - $0</option>
+  <option value="express">Express Delivery (1–2 days) - $10</option>
+  <option value="same-day">Same Day Delivery - $20</option>
+</select>
         </div>
 
         <div className="payment-icons">
@@ -122,7 +159,9 @@ const fetchCart = async () => {
 
           <div className="row">
             <span>Shipping</span>
-            <span>Free</span>
+            {shipping === "standard" && <span>Free</span>}
+            {shipping === "express" && <span>$10</span>}
+            {shipping === "same-day" && <span>$20</span>}
           </div>
 
           <div className="total">

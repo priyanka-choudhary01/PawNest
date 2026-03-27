@@ -14,8 +14,7 @@ const userSchema = new mongoose.Schema({
   },
 
   password: {
-    type: String,
-    required: true
+    type: String
   },
   token :{
     type:String
@@ -23,7 +22,10 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     default: "user"
-  }
+  },
+   otp: String,
+  otpExpiry: Date,
+  otpLastSent: Date
 
 }, { timestamps: true });
 

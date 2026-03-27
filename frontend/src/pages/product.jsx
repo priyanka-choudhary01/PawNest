@@ -46,6 +46,30 @@ function Product() {
     console.error(err);
   }
 };
+const buyItNow = async() =>{
+  const token = localStorage.getItem("token");
+ if(!token) navigate('/signup')
+  try {
+    const res = await fetch(`${BASE_URL}/api/cart/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        productId: id,   
+        quantity: qty,
+        token
+      })
+    });
+
+    const data = await res.json();
+    console.log(data);
+    
+  } catch (err) {
+    console.error(err);
+  }
+  navigate('/cart')
+}
 
   return (
     <div className="product-wrapper">
@@ -89,7 +113,7 @@ function Product() {
           </div>
 
          <button className="add-cart" onClick={addToCart}>Add to Cart</button>
-          <Link to={'/cart'}><button className="buy-now">Buy It Now</button></Link>
+         <button className="buy-now" onClick={buyItNow}>Buy It Now</button>
            </div>
            </div>
           {/* DETAILS */}

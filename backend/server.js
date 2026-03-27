@@ -21,7 +21,6 @@ app.use("/images", express.static("public/pictures"));
 
 const start = async () => {
   try {
-    // ✅ Connect to MongoDB (Mongoose 7+)
     await mongoose.connect(process.env.MONGO_URI);
 
     console.log("MongoDB Connected");

@@ -6,13 +6,27 @@ function NotFound() {
 
   return (
     <div className="notfound-container">
-      <h1>404</h1>
-      <h2>Page Not Found</h2>
-      <p>The page you are looking for does not exist.</p>
+      <div className="notfound-box">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you are looking for does not exist.</p>
 
-      <button onClick={() => navigate("/")}>
-        Go to Home
-      </button>
+        <div className="notfound-buttons">
+          <button 
+            className="home-btn"
+            onClick={() => navigate("/")}
+          >
+            Go to Home
+          </button>
+
+          <button 
+            className="shop-btn"
+            onClick={() => navigate("/shop")}
+          >
+            Go to Shop
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

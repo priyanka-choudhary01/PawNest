@@ -74,6 +74,7 @@ function Orders() {
           <div className="order-footer">
             <p>Total: ${order.totalPrice}</p>
             <p>Address: {order.shippingAddress}</p>
+            <p>Shipping Method: {order.shippingMethod}</p>
           </div>
 
         </div>

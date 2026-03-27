@@ -138,7 +138,7 @@ function Cart() {
 
       {/* ACTION BUTTONS */}
       <div className="buttons">
-        <Link to="/shop">
+        <Link to="/shop" style={{textDecoration:"none"}}>
           <button className="continue">Continue Shopping</button>
         </Link>
 

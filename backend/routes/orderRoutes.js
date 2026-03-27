@@ -7,12 +7,14 @@ const User = require("../models/user");
 
 router.post("/create", async (req, res) => {
   try {
-    const { token, shippingAddress } = req.body;
+    const { token, shippingAddress,contact,shippingMethod,totalPrice } = req.body;
 
     if (!shippingAddress) {
       return res.status(400).json({ message: "Please provide address" });
     }
-
+    if (!contact) {
+      return res.status(400).json({ message: "Please provide contact" });
+    }
    
     const user = await User.findOne({ token });
     if (!user) {
@@ -37,12 +39,13 @@ router.post("/create", async (req, res) => {
     const newOrder = new Order({
       user: user._id,
       items: orderItems,
-      totalPrice: cart.totalPrice,
-      shippingAddress
+      totalPrice: totalPrice,
+      shippingAddress,
+      contact,
+      shippingMethod:shippingMethod
     });
-
     await newOrder.save();
-
+   
     
     cart.items = [];
     cart.totalPrice = 0;
